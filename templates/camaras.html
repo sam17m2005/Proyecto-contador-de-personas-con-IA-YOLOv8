@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo en Vivo</title>
+    <link rel="stylesheet" href="static\css\camaras.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🔒</div>
+            <h1>Sistema de Monitoreo</h1>
+        </div>
+        <div class="header-right">
+            <div class="status">
+                <div class="status-dot"></div>
+                <span>Sistema Activo</span>
+            </div>
+            <button class="view-toggle" id="toggleView" onclick="showBothCameras()">
+                <span>Ver todas las cámaras</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container" id="container">
+        <div class="camera" id="camera1" onclick="showSingleCamera('camera1')">
+            <div class="camera-header">
+                <div class="camera-title">
+                    <div class="camera-icon"></div>
+                    <span>Cámara 1</span>
+                </div>
+                <div class="people-count">
+                    <span>Personas: <span id="count1">0</span></span>
+                </div>
+            </div>
+            <div class="camera-feed">
+                <div class="timestamp" id="time1">00:00:00</div>
+                <img src="/video_pc" alt="Cámara PC">
+            </div>
+        </div>
+
+        <div class="camera" id="camera2" onclick="showSingleCamera('camera2')">
+            <div class="camera-header">
+                <div class="camera-title">
+                    <div class="camera-icon"></div>
+                    <span>Cámara 2</span>
+                </div>
+                <div class="people-count">
+                    <span>Personas: <span id="count2">0</span></span>
+                </div>
+            </div>
+            <div class="camera-feed">
+                <div class="timestamp" id="time2">00:00:00</div>
+                <img src="/video_movil" alt="Cámara Móvil">
+            </div>
+        </div>
+    </div>
+
+    <a href="/" class="back-button">
+        <span>Volver al inicio</span>
+    </a>
+
+    <script src="static\js\camaras.js"></script>
+</body>
+</html>
